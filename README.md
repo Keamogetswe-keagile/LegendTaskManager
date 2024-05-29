@@ -13,7 +13,8 @@ The code was written solely for demonstrating my skills set and due to the deman
 In this section I am going to demonstrate my skills and efficiency in utilizing SQL. I decided to limit the number of queries that were involved in the whole database-creation process.
 
 ### Creating a table
-> CREATE TABLE employee(
-
+> 1. CREATE TABLE employee(
+> _ ID INT(11) AUTO_INCREMENT NOT NULl
+> )
 
 
