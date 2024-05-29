@@ -4,5 +4,5 @@ Legend Task Manager is an application that is still in its premitive stage. But 
 ### Transperancy 
 The code was written solely for demonstrating my skills set and due to the demands of deadline a few comprimises had to be made. I have dedicated this section of the page to express the challenges that were encountered during the course of this project. It has only been a few weeks since I started learning react and seven days since I started Express JS. I have had a lot trouble with react. Besides learning the suitable usecase of hooks, I a had big challenge loading asynchronous content and inducing a render for components to display the fresh content a the time when it is actually loaded. And besides having very little experience working with Express Js, it  took me a great deal of time to understand that assigning a variable outside its original scope raises an exception. I also did not save any session variables throughout the application. The only API developed for authenting the user was that of logging in via the database records.
 
-[!ABOUT SECURITY]
-I did not use any encryption for data store, transmition or processing. I am aware of these disciplines of application development and do regard their importance.
+>[!ABOUT SECURITY]
+>I did not use any encryption for data store, transmition or processing. I am aware of these disciplines of application development and do regard their importance.
