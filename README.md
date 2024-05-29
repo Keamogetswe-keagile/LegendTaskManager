@@ -11,3 +11,9 @@ The code was written solely for demonstrating my skills set and due to the deman
 
 # SQL PRACTICAL APPLICATION
 In this section I am going to demonstrate my skills and efficiency in utilizing SQL. I decided to limit the number of queries that were involved in the whole database-creation process.
+
+###Creating a table
+_ >CREATE TABLE employee(
+
+
+
