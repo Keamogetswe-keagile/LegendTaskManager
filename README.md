@@ -13,6 +13,7 @@ The code was written solely for demonstrating my skills set and due to the deman
 In this section I am going to demonstrate my skills and efficiency in utilizing SQL. I decided to limit the number of queries that were involved in the whole database-creation process.
 
 ### Creating a table
+The Employee table keeps the list of all teams members. Of course, techniques such as table partitoning can be utilized for optimization and performance enhanment but for the sake of demostration I've kept it concise.
 >     CREATE TABLE employee(
 >       id INT(11) AUTO_INCREMENT NOT NULl,
 >       name VARCHAR(30) NOT NULL,
@@ -24,6 +25,6 @@ In this section I am going to demonstrate my skills and efficiency in utilizing 
 >       CONSTRAINT PatternSurname CHECK(surname REGEXP "^[a-zA-Z]{3,27}$"),
 >       CONSTRAINT PatternSurname CHECK(name REGEXP "^[a-zA-Z]{3,27}$"),
 >       CONSTRAINT PatternIdNum CHECK(idNum REGEXP "^[0-9]{13}$"))
-> 
+>
 
 
