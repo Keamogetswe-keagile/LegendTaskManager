@@ -1,4 +1,4 @@
-## Legend Task Manager
+ ## Legend Task Manager
 Legend Task Manager is an application that is still in its premitive stage. But the main idea behind it is to assist teams with managing their tasks. Tasks associated with different projects are sometimes assign to a single indvidual. Commiting to many projects as an individual is by nature quite complex. Legendary Task Manager povides you task management tools with an aesthetic and usable user interface to assist teams with task management.
 
 ### Transperancy 
@@ -42,8 +42,12 @@ Here is the implementation of the client table. To inturrupt the monotony of cre
 > 
 >       FOREIGN KEY projectID REFERENCE project(id) ON DELETE CASCADE)
 
->[!WARNING]
+>[!CAUTION]
 >It is not recommended to use `ON DELETE CASCADE` in this situation. And this is because a client could have many projects. So if ON DELETE CASCADE is applyed as it has been above: that would cause the delection of a single project (which is associated with a client) to also trigger the delection of that client.
 
 
 
+
+>[!NOTE]
+>## Personal sentiments
+>Despite having experienced difficulties in developing with React and Express JS, there are things I now appreciate about these technologies. I particulaly love how end points are created in Node.JS with Express. It is very different from PHP which I am very with. The hole experienc was wonderful although I was challenged to think and make dicisions quicker.
