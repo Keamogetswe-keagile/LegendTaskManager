@@ -20,6 +20,6 @@ In this section I am going to demonstrate my skills and efficiency in utilizing 
 >       idNum INT(11) NOT NULL,
 >       PRIMARRY KEY(id, idNum),
 >       ADD CONSTRAINT PatternName CHECK(name REGEXP "^[a-zA-Z]{3,27}$") 
-> )
+>   )
 
 
