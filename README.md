@@ -25,6 +25,14 @@ The Employee table keeps the list of all teams members. Of course, techniques su
 >       CONSTRAINT PatternSurname CHECK(surname REGEXP "^[a-zA-Z]{3,27}$"),
 >       CONSTRAINT PatternSurname CHECK(name REGEXP "^[a-zA-Z]{3,27}$"),
 >       CONSTRAINT PatternIdNum CHECK(idNum REGEXP "^[0-9]{13}$"))
->
+
+The project Table is used to keep records of projects(its implementaton is also kept concise). The only other thing to note about this table is that it is a weak entity to Employee table and superior to Client table. Its superiosity stems from this practical scenario: A client can propose a project and the proposal can be rejected or accepted depending on the nature of how both parties benefit from the arrangement. So before a client can actually become a client - the project has to be accepted. This is how the project entity is stronger than that of client.
+>     CREATE TABLE project(
+>       id INT(11) AUTO_INCREMENT NOT NULl,
+>       name VARCHAR(30) NOT NULL,
+>       managerID INT(11) NOT NULL,
+>       clientID INT(11) NOT NULL,
+>       FOREIGN KEY managerID REFERENCE employee(id))
+
 
 
