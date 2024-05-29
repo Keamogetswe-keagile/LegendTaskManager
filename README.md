@@ -23,7 +23,7 @@ In this section I am going to demonstrate my skills and efficiency in utilizing 
 >       CONSTRAINT IdUnique UNIQUE(idNum)
 >       CONSTRAINT PatternSurname CHECK(surname REGEXP "^[a-zA-Z]{3,27}$"),
 >       CONSTRAINT PatternSurname CHECK(name REGEXP "^[a-zA-Z]{3,27}$"),
->       CONSTRAINT PatternIdNum CHECK(idNum REGEXP "^[0-9]{3,27}$")
->   )
+>       CONSTRAINT PatternIdNum CHECK(idNum REGEXP "^[0-9]{13}$"))
+> 
 
 
