@@ -14,7 +14,7 @@ In this section I am going to demonstrate my skills and efficiency in utilizing 
 
 ### Creating a table
 > 1. CREATE TABLE employee(
->       id INT(11) AUTO_INCREMENT NOT NULl,
+> -      id INT(11) AUTO_INCREMENT NOT NULl,
 >       name VARCHAR(30) NOT NULL,
 >       surname VARCHAR(30) NOT NULL,
 >       idNum INT(11) NOT NULL,
