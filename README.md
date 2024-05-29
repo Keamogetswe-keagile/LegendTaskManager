@@ -8,5 +8,5 @@ The code was written solely for demonstrating my skills set and due to the deman
 >About Security] 
 >I did not use any encryption for data store, transmition or processing butI am aware of these disciplines of application development and do regard their importance.
 
-#SQL PRACTICAL APPLICATION
+# SQL PRACTICAL APPLICATION
 In this section I am going to demonstrate my skills and efficiency in utilizing SQL. I decided to limit the number of queries that were involved in the whole database-creation process.
