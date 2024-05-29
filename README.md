@@ -17,9 +17,13 @@ In this section I am going to demonstrate my skills and efficiency in utilizing 
 >       id INT(11) AUTO_INCREMENT NOT NULl,
 >       name VARCHAR(30) NOT NULL,
 >       surname VARCHAR(30) NOT NULL,
->       idNum INT(11) NOT NULL,
->       PRIMARRY KEY(id, idNum),
->       ADD CONSTRAINT PatternName CHECK(name REGEXP "^[a-zA-Z]{3,27}$") 
+>       idNum CHAR(11) NOT NULL,
+>       PRIMARRY KEY(id),
+> 
+>       CONSTRAINT IdUnique UNIQUE(idNum)
+>       CONSTRAINT PatternSurname CHECK(surname REGEXP "^[a-zA-Z]{3,27}$"),
+>       CONSTRAINT PatternSurname CHECK(name REGEXP "^[a-zA-Z]{3,27}$"),
+>       CONSTRAINT PatternIdNum CHECK(idNum REGEXP "^[0-9]{3,27}$")
 >   )
 
 
