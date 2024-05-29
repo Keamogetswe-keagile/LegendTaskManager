@@ -33,6 +33,17 @@ The project Table is used to keep records of projects(its implementaton is also 
 >       managerID INT(11) NOT NULL,
 >       clientID INT(11) NOT NULL,
 >       FOREIGN KEY managerID REFERENCE employee(id))
+Here is the implementation of the client table. To inturrupt the monotony of creating regular tables, for this table, we want that when a project record is deleted, to cause even the record it might be associated with inis table to also delete.
+
+>     CREATE TABLE client(
+>       id INT(11) AUTO_INCREMENT NOT NULl,
+>       name VARCHAR(30) NOT NULL,
+>       email VARCHAR(30) NOT NULL,
+> 
+>       FOREIGN KEY projectID REFERENCE project(id) ON DELETE CASCADE)
+
+>[!WARNING]
+>It is not recommended to use `ON DELETE CASCADE` in this situation. And this is because a client could have many projects. So if ON DELETE CASCADE is applyed as it has been above: that would cause the delection of a single project (which is associated with a client) to also trigger the delection of that client.
 
 
 
