@@ -4,6 +4,7 @@ import Login from "./assets/components/login";
 import { useState } from "react";
 
 function App() {
+  session;
   const [state, setState] = useState("login");
 
   //Checing if the user is logged in
