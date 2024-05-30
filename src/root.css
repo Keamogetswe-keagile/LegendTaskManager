@@ -1,0 +1,8 @@
+:root{
+    --font-family-default: nunito;
+    --font-normal-size: 1rem ;
+    --font-heading-size: 1.2rem ;
+    --font-title-size: 1.8rem ;
+    --border-default: solid 0.5px #636363;
+    --soft-white: #f1f1f1;
+}

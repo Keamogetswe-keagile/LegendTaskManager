@@ -1,0 +1,309 @@
+*{
+    border-collapse: collapse;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.i{
+    cursor: pointer;
+}
+body> #root{
+    margin:  0;
+}
+@media (min-width: 768px) {
+    body> #root {
+        display: flex;
+        flex-flow: row nowrap;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    body> #root main{
+        flex-grow: 1;
+    }
+    body> #root> :not(main){
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+    
+    #nav-container{
+        padding: 34px;
+        position: relative;
+        background-color: #020C1A;
+    }#nav-container header {
+        display: flex;
+        margin: -36px -36px 0 -36px;
+        padding: 16px;
+    }#nav-container header h3{
+        display: flex;
+        font-size: 1.3rem;
+        font-weight: normal;
+        color: #E8DDF6;
+        margin-left: 20px;
+    }#nav-container header img{
+        border-radius: 16px;
+    }
+    #nav-container nav section.menu{
+        border-top: 1px #1A0438 solid;
+
+    }
+    #nav-container nav section.menu h6{
+        color: #462C67;
+        margin: 0;
+        margin-top: 16px;
+    }#nav-container nav section.menu ul{
+        padding: 0;
+        margin: 10px 0;
+    }#nav-container nav section.menu li:hover{
+        color: #83d8ff;
+    }#nav-container nav section.menu li.active{
+        color: #00aeff;
+    }
+    #nav-container nav section.menu li{
+
+        cursor: pointer;
+        list-style-type: none;
+        color: #E8DDF6;
+        font-size: 1.2rem;
+        font-weight: lighter;
+        margin-bottom: 16px;
+    }#nav-container nav section#my-profile{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #462C67;
+        display: flex;
+        padding: 16px 16px;
+    }#nav-container nav section#my-profile *{
+        color: #E8DDF6;
+    }#nav-container nav section#my-profile .img-wrapper{
+        height: 36px;
+        width: 36px;
+        background-color: #E8DDF6;
+        border-radius: 100%;
+    }#nav-container nav section#my-profile .text-content{
+        margin-left: 16px;
+    }
+    #nav-container nav section#my-profile h4{
+        margin: 0;
+    }#nav-container nav section#my-profile h6{margin: 0;}
+    main >div{
+        padding: 36px;
+    }
+    #extras{
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: #E8DDF6;
+        border: #462C67 1px solid;
+    } #extras {
+        color: #1A0438;
+        font-size: 0.7rem;
+        padding: 4px ;
+        margin: -36px -36px 0px -36px;
+    }main .header h1{
+
+        font-weight: lighter;
+        
+        font-size: 2.5rem;
+        margin: 0 0 16px 0;
+    }main .header h6{
+        font-weight: bold;
+        margin: 0 0 16px 0;
+        font-size: 0.7rem;
+    }main .card-container.project{
+        overflow-x: hidden ;
+        background-color: #E8DDF6;
+        border: #1A0438 3px solid;
+        border-radius: 20px;
+        display: flex;
+    }main .card-container.project .side-major .text-content div{
+        display: flex;
+    }
+    main .card-container.project .side-major .text-content div h1{display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        font-weight: normal;
+        flex-shrink: 1;}
+    main .card-container.project .side-major{
+        align-self: flex-end;
+        background-color: #E8DDF6;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 16px;
+    }main small{
+        font-weight: bold;
+        font-size:  0.7rem;
+        
+    }main .card-container.project :is(h1, h3, p){
+        margin: 0;
+    }.card-container.project .side-minor{border-left: #1A0438 3px solid;}
+    .card-container.project .side-minor .fragment{
+        padding: 0 16px;
+    }main .card-container.project .side-minor{
+        background-color: white;
+        padding: 0 16px;
+        box-sizing: content-box;
+    }
+    main .card-container.project h1{
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }    main .card-container.project h3{
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        font-weight: normal;
+        letter-spacing: 2px;
+    }.card-container.project .side-minor .fragment{
+        padding: 8px 0;
+    }
+    .card-container.project .side-minor .fragment + .fragment{
+        border-top: #1A0438 2px solid;
+    }
+    .card-container.project .side-minor .fragment.flexed{
+        display: flex;
+        align-items: center;
+    }
+    main .viewer-container h1{
+        font-size: 1.4rem;
+        font-weight: normal;
+    }.col{
+        display: flex;
+        flex-direction: column;
+    }.abs{
+        position: absolute;
+    }
+    .menu-icon.horizontal-dots{
+        border: #8d8d8d 1px solid;
+        margin-top: 5px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+    }.menu-icon.horizontal-dots span{
+        display: block;
+        height: 4px;
+        width: 4px;
+        border-radius: 100%;
+        background-color: #020C1A;
+    }.menu-icon.horizontal-dots span:nth-child(2){
+        margin: 0 2px;
+    }
+    .item-list td:last-child{
+        width: 110px;
+        display: flex;
+        justify-content:center;
+    }
+    .item-list :is(td, th){
+        position: relative;
+        margin: 0;
+        border-spacing:0;
+    }
+    .item-list td menu{
+        box-sizing: border-box;
+        position: relative;
+        margin: 0;
+        padding: 8px;
+        border-radius: 6px;
+        background-color: white;
+        border: #020C1A 1px solid;
+        
+    }
+    
+    .item-list td menu ul {
+        margin: 0;
+        padding: 0;
+    }.item-list td menu ul li:hover{
+        background-color: #f1f1f1;
+    }
+    .item-list td menu ul li{
+        margin-bottom: 3px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        white-space: nowrap;
+        list-style: none;
+        background-color: white;
+
+    }.item-list td .slag{
+        bottom: calc(-100% - 45px );
+        display: none;
+    }.item-list td .menu-icon.horizontal-dots:hover + .slag{
+        display: block;
+    }.item-list td div.abs.slag:hover{
+        display: block;
+    }
+    .item-list tr >:first-child{
+        padding-left: 16px;
+    }.item-list tr{
+        border: #462C67 1px solid;
+        height: 50px;
+    }.item-list thead tr{
+        border-bottom: #462C67 4px double;
+    }
+    .item-list thead{
+        background-color: #E8DDF6; 
+        padding: 10px 0;
+    }.viewer-container table{
+        width: 100%;
+    }.viewer-container table th{
+        color: #462C67;
+        font-size: 0.6rem;
+        text-align: left;
+        height: 40px;
+    }
+    tbody> #root tr td div.col span:first-child{
+        font-size: 0.7rem;
+    }tbody> #root tr td:first-child{
+        font-weight: 600;
+    }body> #root #side-container{
+        padding: 30px;
+        border: #707070 solid 1px;
+    }body> #root #side-container .header {
+        display: flex;
+        justify-content: space-between;
+    }body> #root #side-container .header .menu-icon{
+        background-color: #020C1A;
+        padding: 8px;
+        border-radius: 8px;
+        align-self: center;
+        cursor: pointer;
+    }body> #root #side-container .header .menu-icon span{
+        display: block;
+        width: 16px;
+        height: 2px;
+        background-color: white;
+        
+
+    }body> #root #side-container .header .menu-icon span:nth-child(2){
+        margin: 3px 0;
+    }
+    #side-container .header h3{
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }#side-container .task-glance{
+        border: #707070 solid 1.5px;
+        background-color: #F2F2F2;
+        border-radius: 8px;
+    }#side-container .task-glance .glance-item{
+        padding: 8px 16px;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }#side-container .task-glance >:not(.glance-item:first-child, .glance-item:last-child){
+        border-top:#707070 solid 1.5px ;
+        border-bottom:#707070 solid 1.5px ;
+    }#side-container .task-glance .glance-item :last-child{
+        color: #217B97;
+    }#side-container .filter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+}
