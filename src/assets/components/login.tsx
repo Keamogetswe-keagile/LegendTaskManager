@@ -2,30 +2,37 @@ import { useRef, useState } from "react";
 
 interface ISetState {
   setState: Function;
+  user: any;
 }
-export default function Login({ setState }: ISetState) {
+export default function Login({ setState, user }: ISetState) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function submitCallback() {
-    const formData = new FormData();
-    formData.set("username", email);
-    formData.set("password", password);
+    const users = new Map();
+    users.set("mrkkeagile@gmail.com", {
+      password: "pass",
+      name: "Keamgetswe",
+      surname: "Keagile",
+      email: email,
+    });
 
-    const request = new XMLHttpRequest();
-    const url = encodeURI(
-      `http://localhost:3000/login?username=${email}&password=${password}`
-    );
-    console.log(url);
-    request.open("GET", url);
-    request.send();
-    request.onload = () => {
-      const response = JSON.parse(request.responseText);
-      console.log(response.status);
-      if (response.status == "successful") {
-        setState("main");
-      }
-    };
+    users.set("collinzimba@gmail.com", {
+      password: "colpass",
+      name: "Collin",
+      surname: "Zimba",
+      email: email,
+    });
+    const userLoggingIn = users.get(email.trim().toLowerCase());
+    if (password == userLoggingIn.password) {
+      user.name = userLoggingIn.name;
+      user.surname = userLoggingIn.surname;
+      user.email = userLoggingIn.email;
+
+      setState("main");
+    } else {
+      console.error("Incorrect password");
+    }
   }
   return (
     <>
@@ -50,7 +57,6 @@ export default function Login({ setState }: ISetState) {
               name="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span className="off-stack top right">Forgot your password</span>
           </div>
           <div className="segment">
             <input
@@ -65,7 +71,7 @@ export default function Login({ setState }: ISetState) {
           </div>
           <div className="segment">
             <p>
-              Don't have accont? <a>Sign up</a>
+              Already have an account? <a>Log in</a>
             </p>
           </div>
         </div>

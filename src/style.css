@@ -57,17 +57,22 @@
         flex-flow: column;
         margin-bottom: 12px;
         position: relative;
-    }.segment .off-stack{
+    }
+    .segment.flex{
+        display: flex;
+        flex-direction: row;
+    }
+    .segment .off-stack{
         position: absolute;
         font-weight: 600;
         font-size: 0.8rem;
     }.segment small{display: block;font-weight: bolder;margin-bottom: 4px;}
-    .segment :is(input, textarea) {
+    .segment :is(input, textarea, button) {
         padding: 6px 8px;
         border-radius: 4px;
         cursor: pointer;
     }
-    .segment :where(input[type='password'], input[type='text'], input[type='date'], textarea) {
+    .segment :where(input[type='password'], input[type='text'], input[type='date'], textarea, button) {
         border-width: 1px;
         border-style: solid;
         border-color: #b8b8b8;
@@ -160,6 +165,9 @@
     }
     tbody :not(tr + tbody>tr:last-child, div){
         border-top: 1px solid #b4b4b4
+    }tbody tr td:last-child > div{
+        display: flex;
+        justify-content: center;
     }
     tr th{
         font-size: 0.8rem;
@@ -249,12 +257,15 @@
     }
     #dashboard .collection .profile .img-wrapper{
         width: 60px;
-        
+        display: flex;
+        background-color: #7c9ab4;
+        justify-content: center;
+        align-items: flex-end;
         overflow: hidden;
         aspect-ratio: 1;
         border-radius: 100%;
     }#dashboard .collection .profile .img-wrapper img{
-        width: 100%;
+        width: 80%;
     }
     #dashboard .collection .profile .text-content h4{
         margin: 0; font-size: 1rem; 
@@ -365,7 +376,13 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 10px;
-    }#task-action .fields .segment textarea{
+    }#task-action .fields .segment.flex{
+        flex-direction: row;
+    }#task-action .fields .segment.flex > :first-child{
+        flex-grow: 1;
+        margin-right: 12px;
+    }
+    #task-action .fields .segment textarea{
         resize: none;
 
     }#task-action .fields .segment textarea::-webkit-scrollbar{

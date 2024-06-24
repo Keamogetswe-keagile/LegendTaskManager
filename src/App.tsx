@@ -2,28 +2,15 @@ import LegendTask from "./assets/components/LegendTask";
 import Login from "./assets/components/login";
 
 import { useState } from "react";
+import TaskManager from "./assets/services/services";
 
 function App() {
-  session;
   const [state, setState] = useState("login");
-
-  //Checing if the user is logged in
-  let status;
-  const request = new XMLHttpRequest();
-  request.open("GET", "http://localhost:3000/");
-  request.send();
-  request.onload = () => {
-    status = JSON.parse(request.responseText).status;
-    console.log(status);
-    if (!status == "visiter") {
-      setState("main");
-    }
-  };
-
+  const userData = TaskManager.user;
   if (state == "main") {
     return <LegendTask />;
   } else {
-    return <Login setState={setState} />;
+    return <Login setState={setState} user={userData} />;
   }
 }
 export default App;

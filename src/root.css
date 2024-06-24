@@ -1,3 +1,7 @@
+/**dasdas
+
+*/
+
 :root{
     --font-family-default: nunito;
     --font-normal-size: 1rem ;
@@ -5,4 +9,13 @@
     --font-title-size: 1.8rem ;
     --border-default: solid 0.5px #636363;
     --soft-white: #f1f1f1;
+
+    --space-smaller: 6px,
+    --space-medium:12px,
+    --space-large: 24px,
+    --space-xlarge: 36px;
+    --space-xxlarge: 45px;
+
+    
+
 }

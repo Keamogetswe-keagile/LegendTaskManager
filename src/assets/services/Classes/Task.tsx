@@ -4,14 +4,14 @@ export default class Task implements ITask {
   description: string;
   date: Date;
   ID: number;
-  status: "In Progress" | "Pending" | "Completed";
+  status: "In Progress" | "Pending" | "Completed" | "In Review";
 
   constructor(
     ID: number,
     name: string,
     description: string,
     date: Date,
-    status: "In Progress" | "Pending" | "Completed",
+    status: "In Progress" | "Pending" | "Completed" | "In Review",
     projectID: number
   ) {
     this.name = name;

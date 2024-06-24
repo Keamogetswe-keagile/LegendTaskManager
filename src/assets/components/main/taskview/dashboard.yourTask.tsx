@@ -22,13 +22,13 @@ export function IndividualProgress() {
             <td>
               {
                 tasks.filter((task: Task) => {
-                  return task.status == "Completed";
+                  return task.status == "Complete";
                 }).length
               }
             </td>
           </tr>
           <tr>
-            <td>Active tasks</td>
+            <td>Tasks In Progress</td>
             <td>
               {" "}
               {
@@ -55,10 +55,23 @@ export function IndividualProgress() {
               {" "}
               {
                 tasks.filter((task: Task) => {
-                  const dateStatus: boolean = new Date(task.date) > new Date();
+                  const dateNowComparison = new Date()
+                    .toISOString()
+                    .substring(0, 10);
+                  const taskDatecomparison = new Date(task.date)
+                    .toISOString()
+                    .substring(0, 10);
+                  console.log(" Comparisons");
+
+                  console.log(taskDatecomparison);
+                  console.log(dateNowComparison);
+                  const dateStatus: boolean =
+                    new Date(taskDatecomparison).getTime() <
+                    new Date(dateNowComparison).getTime();
                   if (
-                    task.status == "Pending" ||
-                    task.status == "In Progress"
+                    (task.status == "Pending" ||
+                      task.status == "In Progress") &&
+                    dateStatus
                   ) {
                     return true;
                   }

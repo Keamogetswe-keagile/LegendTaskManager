@@ -2,9 +2,9 @@ import React, { createContext, useRef } from "react";
 import TaskManager from "../services/services";
 import { TaskTable } from "./main/main.table";
 import TaskView from "./main/Dashboard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export const TaskBroadcastContext = createContext({});
+export const TaskBroadcastContext = createContext(TaskManager);
 export const Action = {
   addTask: "addTask",
   viewTask: "viewTask",
@@ -12,12 +12,16 @@ export const Action = {
 };
 
 export default function LegendTask() {
+  const [change, setChange] = useState(false);
+  useEffect(() => {
+    if (change == true) {
+      setChange(false);
+    }
+  });
   const TaskManagerService = useRef(TaskManager);
-  const [taskInView, setTaskInView] = useState({ taskID: "", action: "" });
-
+  const [taskInView, setTaskInView] = useState({ taskID: -1, action: "" });
   const [projectIdState, setProjectIdd] = useState(1);
   //Retriving tasks from API using TaskManager which is essentially a service
-  TaskManagerService.current.RefreshTask();
 
   return (
     <>
@@ -27,6 +31,7 @@ export default function LegendTask() {
           setTaskInView,
           TaskManagerService,
           projectIdState,
+          setChange,
         }}
       >
         <TaskView />

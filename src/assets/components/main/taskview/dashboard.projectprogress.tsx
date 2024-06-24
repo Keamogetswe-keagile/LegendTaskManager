@@ -12,16 +12,25 @@ interface IProjectStats {
 export function ProjectProgress() {
   const { TaskManagerService } = useContext(TaskBroadcastContext);
   const user = TaskManagerService.current.user;
-  const [projectStats, setProjectStats] = useState({});
-  useEffect(() => {
-    fetch("http://localhost:3000/projectstats?projectID=1")
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        setProjectStats(result[0]);
-      });
-  }, []);
+  //Dummy data to simulate the API response
+  const [projectStats, setProjectStats] = useState({
+    Completed: 11,
+    Pending: 3,
+    Overall: 13,
+    projectManager: "CollinZimba@gmial.com",
+    projectName: "Aplhonse waer ERP",
+    enterprise: "Alphonse wear",
+    clientEmail: "Nora@Alphomse.com",
+  });
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/projectstats?projectID=1")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((result) => {
+  //       setProjectStats(result[0]);
+  //     });
+  // }, []);
   const {
     Completed,
     Pending,
@@ -74,7 +83,7 @@ export function ProjectProgress() {
       </div>
       <div className="profile">
         <div className="screen-only img-wrapper">
-          <img src="/profile.jpg" />
+          <img src="/user.svg" />
         </div>
         <div className="text-content">
           <span className="print-only flyer-heading">Employee details</span>

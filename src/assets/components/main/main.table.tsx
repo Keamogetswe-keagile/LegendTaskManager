@@ -8,7 +8,7 @@ export function TaskTable(tasks: ITask[]) {
     if (initialLoad == false) {
       setTimeout(() => {
         setInitialLoad(true);
-      }, 100);
+      });
     }
   });
   const { setTaskInView } = useContext(TaskBroadcastContext);
@@ -35,6 +35,7 @@ export function TaskTable(tasks: ITask[]) {
       </thead>
       <tbody>
         {tasks.tasks.map((item, index) => {
+          console.log(item.date);
           return (
             <tr key={item.ID}>
               <td>{item.name}</td>
