@@ -38,7 +38,7 @@ function AddtaskView() {
         <input
           className="dark"
           type="button"
-          value="Edit task"
+          value="Add task"
           onClick={() => {
             commit(TaskManagerService.current);
           }}
