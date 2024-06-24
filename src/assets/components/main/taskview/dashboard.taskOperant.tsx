@@ -38,7 +38,7 @@ function AddtaskView() {
         <input
           className="dark"
           type="button"
-          value="Add task"
+          value="Edit task"
           onClick={() => {
             commit(TaskManagerService.current);
           }}
@@ -50,6 +50,7 @@ function AddtaskView() {
 function ViewTaskView() {
   const { TaskManagerService, taskInView } = useContext(TaskBroadcastContext);
   const task = TaskManagerService.current.getTask(taskInView.taskID);
+  console.log("Task set: ", task?.date.toISOString().substring(0, 10));
   return (
     <>
       <div className="segment">
@@ -62,7 +63,7 @@ function ViewTaskView() {
       </div>
       <div className="segment">
         <small>Date</small>
-        <span className="">{task.date}</span>
+        <span className="">{task?.date.toISOString().substring(0, 10)}</span>
       </div>
       <div className="segment">
         <small>status</small>
